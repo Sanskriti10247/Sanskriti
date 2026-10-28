@@ -115,7 +115,7 @@ No physics engine or game engine is used. The physics, car handling and game loo
 
 ### Requirements
 
-- Node.js 20 or newer
+- Node.js 24 LTS
 - pnpm (npm or yarn also work)
 
 ### Installation
@@ -204,7 +204,57 @@ pnpm install
 
 ## Deployment
 
-The site builds to static files and can be hosted on any static hosting service.
+### Vercel (free Hobby plan)
+
+The repository is ready to import into Vercel as a static Vite project. No backend,
+database, paid add-on or domain purchase is needed. Use the free Hobby plan for
+this personal portfolio and keep the provided `vercel.app` address.
+
+1. Sign in to [Vercel](https://vercel.com) with GitHub on a personal Hobby account.
+2. Select **Add New → Project** and import `Sanskriti10247/Sanskriti-s-New-Portfolio`.
+3. Authorize access to this repository if GitHub requests it.
+4. Keep the following settings, then select **Deploy**:
+
+| Setting               | Value                                                            |
+| --------------------- | ---------------------------------------------------------------- |
+| Production branch     | `main`                                                           |
+| Framework preset      | `Vite`                                                           |
+| Root directory        | Repository root (`./`); leave the root directory field unchanged |
+| Node.js version       | `24.x`                                                           |
+| Install command       | `npx --yes pnpm@10.26.1 install --frozen-lockfile`               |
+| Build command         | `pnpm run build`                                                 |
+| Output directory      | `dist/public`                                                    |
+| Environment variables | None                                                             |
+
+`vercel.json` supplies the framework, install, build, output and routing settings.
+`package.json` pins Node.js and pnpm, and `pnpm-lock.yaml` locks the dependencies.
+The GitHub repository already contains only the portfolio, so do **not** set the
+root directory to `artifacts/sanskriti-portfolio`.
+
+Do not copy development secrets into Vercel. Neither `GITHUB_TOKEN` nor
+`SESSION_SECRET` is used by the website. Leave `BASE_PATH` and `PORT` unset:
+the site defaults to the domain root, and Vercel serves the compiled static files.
+
+The routing fallback serves `index.html` for non-file paths. Existing static files
+(including `/Sanskriti-Resume.pdf`, `/favicon.svg`, `/robots.txt` and bundled
+JavaScript/CSS) remain directly accessible. Page navigation uses hash anchors
+such as `/#work` and `/#contact`; the game opens in an overlay and has no separate route.
+
+After the first deployment, pushes to `main` automatically trigger a production
+deployment through the GitHub connection. Check the Vercel deployment status
+before assuming an update is live.
+
+Verify the live homepage, section navigation, resume link, social links and hidden
+driving game after deployment. Fonts load from Google Fonts; all 3D scenes are
+generated in the browser and require no external model hosting.
+
+Stay on Hobby and decline Pro trials or paid add-ons. Hobby is free within its
+personal-use limits; exceeding those limits may pause service rather than
+providing unlimited free usage.
+
+### Other static hosts
+
+The site builds to static files and can also be hosted on other static hosting services.
 
 ```bash
 pnpm build
