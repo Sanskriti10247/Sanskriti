@@ -1,5 +1,5 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
-import { ArrowDown, Github, RotateCcw } from 'lucide-react';
+import { ArrowDown, FileText, Github, RotateCcw } from 'lucide-react';
 import { ThreeCanvas } from '@/components/three/ThreeCanvas';
 import { Doodle } from '@/components/ui/Doodle';
 import { profile } from '@/content';
@@ -57,6 +57,15 @@ export function Hero() {
             </a>
             <a className="button" href={profile.github} target="_blank" rel="noreferrer">
               <Github size={16} aria-hidden="true" /> GitHub
+            </a>
+            <a
+              className="button"
+              href={`${import.meta.env.BASE_URL}Sanskriti-Resume.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Here's my resume (PDF, opens in a new tab)"
+            >
+              <FileText size={16} aria-hidden="true" /> Here&rsquo;s my resume
             </a>
           </div>
 

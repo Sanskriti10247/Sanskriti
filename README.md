@@ -216,6 +216,10 @@ Upload the contents of `dist/public`. Configure the host to serve `index.html` f
 
 - **Email:** [Kumarisanskriti889@gmail.com](mailto:Kumarisanskriti889@gmail.com)
 - **GitHub:** [@Sanskriti10247](https://github.com/Sanskriti10247)
+- **LinkedIn:** [Sanskriti](https://www.linkedin.com/in/sanskriti988/)
+- **Medium:** [@Sanskriti_988](https://medium.com/@Sanskriti_988)
+- **YouTube:** [@Sanskriti_988](https://www.youtube.com/@Sanskriti_988)
+- **Resume:** [View PDF](public/Sanskriti-Resume.pdf) — also available from the hero section.
 
 ## License
 
