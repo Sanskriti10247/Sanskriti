@@ -1,0 +1,51 @@
+.fallback {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.toy {
+  position: absolute;
+  border: var(--border);
+  box-shadow: inset -8px -10px 0 rgba(46, 34, 41, 0.08);
+}
+
+.ball {
+  left: 18%;
+  bottom: 14%;
+  width: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--pink-300);
+}
+
+.cube {
+  right: 16%;
+  bottom: 14%;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  background: var(--butter);
+  transform: rotate(12deg);
+}
+
+.pill {
+  left: 40%;
+  bottom: 44%;
+  width: 30%;
+  height: 13%;
+  border-radius: 999px;
+  background: var(--peach);
+  transform: rotate(-14deg);
+}
+
+.heart {
+  right: 30%;
+  top: 14%;
+  border: 0;
+  box-shadow: none;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 1;
+  color: var(--rose-500);
+  transform: rotate(10deg);
+}

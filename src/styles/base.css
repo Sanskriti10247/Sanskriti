@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 20px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  /* Faint dotted notebook paper */
+  background-image: radial-gradient(circle, rgba(224, 81, 127, 0.12) 1.2px, transparent 1.7px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--pink-300);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--rose-500);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Shared layout + type utilities */
+.wrap {
+  width: min(var(--page-width), calc(100% - var(--page-gutter)));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(80px, 11vw, 140px);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* Handwritten side notes */
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  color: var(--rose-500);
+}
+
+/* A highlighter swipe behind a word */
+.highlight {
+  background: linear-gradient(
+    transparent 58%,
+    var(--pink-300) 58%,
+    var(--pink-300) 90%,
+    transparent 90%
+  );
+  padding-inline: 0.06em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Buttons. :where() keeps specificity at zero so component styles can override them. */
+/* Page wrapper: clip the tilted ribbon and glows at the screen edges. */
+#top {
+  overflow-x: clip;
+}
+
+:where(.button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
+  border: var(--border);
+  border-radius: 999px;
+  background: var(--white);
+  font: 700 15px/1.2 var(--font-body);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition:
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out),
+    background 0.2s;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.button-primary {
+  background: var(--pink-400);
+}
+
+.button-primary:hover {
+  background: var(--pink-300);
+}
+
+.button-small {
+  padding: 7px 14px;
+  font-size: 13px;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* Sticker card used across sections (zero specificity, see above) */
+:where(.card) {
+  position: relative;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-pink);
+}
+
+/* Strip of washi tape stuck on top of a card */
+.tape {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 92px;
+  height: 26px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(249, 168, 194, 0.75) 0 8px,
+    rgba(255, 227, 154, 0.75) 8px 16px
+  );
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Reveal-on-scroll (driven by useRevealOnScroll) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s var(--ease-out);
+}
+
+[data-reveal][data-visible] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-delay='1'] {
+  transition-delay: 0.08s;
+}
+
+[data-reveal-delay='2'] {
+  transition-delay: 0.16s;
+}
+
+[data-reveal-delay='3'] {
+  transition-delay: 0.24s;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 14px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

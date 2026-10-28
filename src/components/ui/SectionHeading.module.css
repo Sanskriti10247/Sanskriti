@@ -1,0 +1,31 @@
+.head {
+  max-width: 44rem;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 1.55rem;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.squiggle {
+  width: 46px;
+  height: 12px;
+  color: var(--pink-300);
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 68px);
+}
+
+.intro {
+  max-width: 36rem;
+  margin-top: 18px;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+}

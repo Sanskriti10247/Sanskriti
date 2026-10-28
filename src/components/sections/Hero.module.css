@@ -1,0 +1,254 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  min-height: min(860px, 100svh);
+  padding-top: calc(var(--nav-height) + 40px);
+  padding-bottom: 64px;
+}
+
+/* Soft pink glow behind the hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -10% 30%;
+  z-index: -1;
+  background:
+    radial-gradient(closest-side at 60% 45%, rgba(255, 219, 230, 0.85), transparent),
+    radial-gradient(closest-side at 25% 80%, rgba(255, 244, 209, 0.7), transparent);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+}
+
+.sparkleBig {
+  position: absolute;
+  top: 6px;
+  left: clamp(320px, 33vw, 440px);
+  width: 34px;
+  height: 34px;
+  color: var(--butter);
+}
+
+.sparkleSmall {
+  position: absolute;
+  top: 48px;
+  left: clamp(360px, 37vw, 488px);
+  width: 18px;
+  height: 18px;
+  color: var(--pink-300);
+  animation-delay: -2s;
+}
+
+.heart {
+  position: absolute;
+  top: -22px;
+  left: -20px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  color: var(--pink-400);
+  rotate: -14deg;
+}
+
+.swirl {
+  position: absolute;
+  right: -34px;
+  bottom: 70px;
+  width: 46px;
+  height: 46px;
+  color: var(--rose-500);
+}
+
+.hello {
+  margin-bottom: 6px;
+  font-size: 1.7rem;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.heading {
+  margin: 0;
+}
+
+.title {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: clamp(56px, 8.4vw, 116px);
+  line-height: 0.92;
+  cursor: pointer;
+}
+
+.name {
+  display: inline-block;
+  transition: transform 0.35s var(--ease-bounce);
+}
+
+.portfolio {
+  color: var(--rose-500);
+  transition: transform 0.35s var(--ease-bounce);
+}
+
+.title:hover .name {
+  transform: rotate(-2.5deg) translateY(-3px);
+}
+
+.title:hover .portfolio {
+  transform: translateX(10px);
+}
+
+.title:focus-visible {
+  outline-offset: 8px;
+}
+
+.secret {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 10px 0 0 clamp(80px, 16vw, 230px);
+  font-size: 1.35rem;
+  color: var(--ink-soft);
+  transform: rotate(-1.5deg);
+}
+
+.arrow {
+  flex: none;
+  width: 52px;
+  height: 36px;
+  fill: none;
+  stroke: var(--rose-500);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lede {
+  max-width: 34rem;
+  margin-top: 28px;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+}
+
+.lede em {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  padding: 4px 12px;
+  border: 1.5px dashed var(--pink-400);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--white);
+}
+
+/* Toy box card */
+.toybox {
+  height: clamp(380px, 46vw, 540px);
+  background:
+    radial-gradient(circle at 50% 110%, var(--blush-200), transparent 60%), var(--blush-50);
+  transform: rotate(1.2deg);
+}
+
+.toybox > div:first-of-type {
+  border-radius: calc(var(--radius-md) - 2px);
+  overflow: hidden;
+}
+
+.note {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 1.4rem;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.toyBar {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toyBar button {
+  pointer-events: auto;
+}
+
+.status {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.gameLoading {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #fff1f5;
+}
+
+@media (max-width: 900px) {
+  .hero::before {
+    inset: auto 0 -4% 0;
+    height: 520px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-top: calc(var(--nav-height) + 32px);
+  }
+
+  .toybox {
+    height: 380px;
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .sparkleBig,
+  .sparkleSmall,
+  .swirl {
+    display: none;
+  }
+
+  .secret {
+    margin-left: 24px;
+    font-size: 1.2rem;
+  }
+}

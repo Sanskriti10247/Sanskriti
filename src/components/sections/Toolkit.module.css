@@ -1,0 +1,156 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.group {
+  --tint: var(--blush-100);
+  --pop: var(--pink-300);
+  grid-column: span 2;
+  padding: 22px 22px 24px;
+  box-shadow: 5px 5px 0 var(--pop);
+  transition:
+    transform 0.3s var(--ease-bounce),
+    box-shadow 0.3s var(--ease-out);
+}
+
+.group:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+  box-shadow: 8px 8px 0 var(--pop);
+}
+
+/* Rows of six columns: 2+4, 3+3, 2+4, then tools across the full width. */
+.ai,
+.systems {
+  grid-column: span 4;
+}
+
+.backend,
+.frontend {
+  grid-column: span 3;
+}
+
+.tools {
+  grid-column: 1 / -1;
+}
+
+.languages {
+  --tint: var(--blush-100);
+  --pop: var(--pink-300);
+}
+
+.ai {
+  --tint: var(--blush-50);
+  --pop: var(--pink-400);
+}
+
+.backend {
+  --tint: var(--peach-soft);
+  --pop: var(--peach);
+}
+
+.frontend {
+  --tint: var(--mint-soft);
+  --pop: var(--mint);
+}
+
+.data {
+  --tint: var(--butter-soft);
+  --pop: var(--butter);
+}
+
+.systems {
+  --tint: var(--blush-100);
+  --pop: var(--pink-300);
+}
+
+.tools {
+  --tint: var(--mint-soft);
+  --pop: var(--mint);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: var(--border);
+  border-radius: 12px;
+  background: var(--tint);
+  transform: rotate(-6deg);
+  transition: transform 0.35s var(--ease-bounce);
+}
+
+.group:hover .icon {
+  transform: rotate(6deg) scale(1.08);
+}
+
+.label {
+  flex: 1;
+  font: 800 19px/1.2 var(--font-display);
+}
+
+.count {
+  font: 700 1.3rem/1 var(--font-hand);
+  color: var(--rose-500);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 4px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--tint);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.chips li:hover {
+  border-color: var(--ink);
+  background: var(--white);
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .group:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  .group.tools {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group:nth-child(n) {
+    grid-column: span 1;
+  }
+}

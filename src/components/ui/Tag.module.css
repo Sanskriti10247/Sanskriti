@@ -1,0 +1,21 @@
+.tag {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.outline {
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--white);
+}
+
+.filled {
+  border: 1.5px solid var(--ink);
+  background: var(--butter-soft);
+  color: var(--ink);
+  font-weight: 700;
+}

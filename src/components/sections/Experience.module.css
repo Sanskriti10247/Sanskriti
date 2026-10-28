@@ -1,0 +1,116 @@
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 32px;
+  margin: 0;
+  padding: 0 0 0 44px;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 13px;
+  border-left: 3px dashed var(--pink-300);
+}
+
+.entry {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 26px;
+  left: -40px;
+  width: 22px;
+  height: 22px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--pink-400);
+}
+
+.entry:nth-child(even) .dot {
+  background: var(--butter);
+}
+
+.card {
+  max-width: 760px;
+  padding: 24px 28px;
+}
+
+.when {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.now {
+  font-size: 1.35rem;
+  transform: rotate(-3deg);
+}
+
+.current .card {
+  background: var(--blush-50);
+  box-shadow: 6px 6px 0 var(--pink-400);
+}
+
+.current .dot {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 127, 164, 0.55);
+  }
+
+  50% {
+    box-shadow: 0 0 0 9px rgba(244, 127, 164, 0);
+  }
+}
+
+.period {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--blush-100);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rose-600);
+}
+
+.role {
+  font-size: clamp(24px, 2.6vw, 30px);
+}
+
+.organisation {
+  margin-top: 4px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.summary {
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meta li {
+  padding: 3px 12px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--butter-soft);
+  font-size: 14px;
+  font-weight: 700;
+}

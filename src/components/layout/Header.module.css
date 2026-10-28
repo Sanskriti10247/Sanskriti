@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  padding-top: 12px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: calc(var(--nav-height) - 12px);
+  padding: 0 10px 0 14px;
+  border: var(--border);
+  border-radius: 999px;
+  background: rgba(255, 253, 251, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 0 var(--pink-300);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  font: 800 19px/1 var(--font-display);
+  text-decoration: none;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: var(--border);
+  border-radius: 11px;
+  background: var(--pink-400);
+  font: 800 18px/1 var(--font-display);
+  transform: rotate(-8deg);
+  transition: transform 0.35s var(--ease-bounce);
+}
+
+.brand:hover .mark {
+  transform: rotate(8deg) scale(1.08);
+}
+
+.links {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.links a:hover {
+  background: var(--blush-100);
+  color: var(--ink);
+}
+
+.menuCta {
+  display: none;
+}
+
+.menuButton {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .cta {
+    display: none;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+
+  .links {
+    position: absolute;
+    top: calc(var(--nav-height) + 6px);
+    right: calc(var(--page-gutter) / 2);
+    left: calc(var(--page-gutter) / 2);
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-pink);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.2s,
+      transform 0.2s var(--ease-out),
+      visibility 0.2s;
+  }
+
+  .links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .links a {
+    padding: 12px 14px;
+    font-size: 17px;
+  }
+
+  .menuCta {
+    display: block;
+  }
+}

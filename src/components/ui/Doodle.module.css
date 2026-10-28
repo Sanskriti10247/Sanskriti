@@ -1,0 +1,37 @@
+.doodle {
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.fill {
+  fill: currentColor;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.float {
+  animation: bob 4.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    translate: 0 -6px;
+    rotate: 8deg;
+  }
+}

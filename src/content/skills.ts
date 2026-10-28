@@ -1,0 +1,88 @@
+import type { SkillGroup } from './types';
+
+export const skillGroups: SkillGroup[] = [
+  {
+    id: 'languages',
+    label: 'Programming languages',
+    items: ['C++', 'Java', 'Python', 'TypeScript', 'JavaScript', 'SQL'],
+  },
+  {
+    id: 'ai',
+    label: 'AI & machine learning',
+    items: [
+      'Retrieval-Augmented Generation (RAG)',
+      'PyTorch',
+      'Hugging Face Transformers',
+      'LangChain',
+      'Embeddings',
+      'NLP',
+      'Computer Vision',
+      'YOLOv8',
+      'ResNet-50',
+    ],
+  },
+  {
+    id: 'backend',
+    label: 'Backend',
+    items: [
+      'FastAPI',
+      'Node.js',
+      'Express.js',
+      'Spring Boot',
+      'REST APIs',
+      'Async programming',
+      'JWT auth',
+      'BullMQ',
+    ],
+  },
+  {
+    id: 'frontend',
+    label: 'Frontend',
+    items: ['React.js', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Jetpack Compose'],
+  },
+  {
+    id: 'data',
+    label: 'Databases & storage',
+    items: [
+      'PostgreSQL',
+      'MongoDB',
+      'Redis',
+      'SQLite',
+      'Qdrant',
+      'Prisma',
+      'Firebase',
+      'Firestore',
+    ],
+  },
+  {
+    id: 'systems',
+    label: 'Systems & architecture',
+    items: [
+      'Data structures & algorithms',
+      'Object-oriented programming',
+      'Operating systems',
+      'Database internals',
+      'Query optimization',
+      'Distributed systems',
+      'Concurrency',
+      'Caching',
+    ],
+  },
+  {
+    id: 'tools',
+    label: 'Tools & testing',
+    items: [
+      'Git',
+      'GitHub',
+      'Linux',
+      'Docker',
+      'CMake',
+      'pytest',
+      'Vitest',
+      'Playwright',
+      'Catch2',
+      'Vercel',
+      'Render',
+    ],
+  },
+];

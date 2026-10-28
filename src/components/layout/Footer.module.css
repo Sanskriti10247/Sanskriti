@@ -1,0 +1,30 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 36px 0 44px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  padding-top: 26px;
+  border-top: 2px dashed var(--pink-300);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.backTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.backTop:hover {
+  color: var(--rose-500);
+}

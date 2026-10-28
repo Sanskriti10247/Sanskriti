@@ -1,0 +1,23 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.none {
+  touch-action: pan-y;
+}
+
+.tap {
+  touch-action: manipulation;
+}
+
+.drag {
+  touch-action: none;
+}
