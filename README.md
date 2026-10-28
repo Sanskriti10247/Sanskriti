@@ -121,8 +121,8 @@ No physics engine or game engine is used. The physics, car handling and game loo
 ### Installation
 
 ```bash
-git clone https://github.com/Sanskriti10247/Sanskriti-s-New-Portfolio.git
-cd Sanskriti-s-New-Portfolio
+git clone https://github.com/Sanskriti10247/Sanskriti.git
+cd Sanskriti
 pnpm install
 ```
 
@@ -211,7 +211,7 @@ database, paid add-on or domain purchase is needed. Use the free Hobby plan for
 this personal portfolio and keep the provided `vercel.app` address.
 
 1. Sign in to [Vercel](https://vercel.com) with GitHub on a personal Hobby account.
-2. Select **Add New → Project** and import `Sanskriti10247/Sanskriti-s-New-Portfolio`.
+2. Select **Add New → Project** and import `Sanskriti10247/Sanskriti`.
 3. Authorize access to this repository if GitHub requests it.
 4. Keep the following settings, then select **Deploy**:
 
