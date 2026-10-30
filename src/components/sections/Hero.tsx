@@ -60,7 +60,7 @@ export function Hero() {
             </a>
             <a
               className="button"
-              href={`${import.meta.env.BASE_URL}Sanskriti-Resume.pdf`}
+              href={`${import.meta.env.BASE_URL}Sanskriti_SDE_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Here's my resume (PDF, opens in a new tab)"
